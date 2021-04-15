@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Calendar</string>
+    <string name="forward">>></string>
+    <string name="backward">&lt;&lt;</string>
+    <string name="contact">Contact us and developer</string>
+
+</resources>

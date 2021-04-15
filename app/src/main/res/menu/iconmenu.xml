@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/yearView"
+
+        android:title="Year View"/>
+
+    <item android:id="@+id/monthView"
+
+        android:title="Month View"/>
+
+    <item android:id="@+id/dayView"
+
+        android:title="Day View"/>
+    <item android:id="@+id/addEvent"
+
+       android:title="Add Event"/>
+
+</menu>
