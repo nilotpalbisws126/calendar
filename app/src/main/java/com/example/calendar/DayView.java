@@ -22,15 +22,31 @@ import java.time.format.DateTimeFormatter;
 
 public class DayView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private TextView date;
+    private TextView day;
+    private TextView month;
+    private TextView dayOfWeek;
+    private TextView year;
     LocalDate today = LocalDate.now();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_view);
 
-        date=findViewById(R.id.dateView);
-        String message=""+monthYearFromDate(today);
-        date.setText(message);
+        day=findViewById(R.id.day);
+        month=findViewById(R.id.month);
+        dayOfWeek=findViewById(R.id.dayOfWeek);
+        year=findViewById(R.id.year_text);
+
+
+        String day_text=""+dayFromDate(today);
+        String year_text=""+yearFromDate(today);
+        String month_text=""+monthFromDate(today);
+        String dayOfWeek_text=""+today.getDayOfWeek();
+        day.setText(day_text);
+        month.setText(month_text);
+        dayOfWeek.setText(dayOfWeek_text);
+        year.setText(year_text);
+
 
         final DrawerLayout drawer = findViewById(R.id.drawer);
         ImageView menuIcon = (ImageView) findViewById(R.id.toggle);
@@ -51,14 +67,36 @@ public class DayView extends AppCompatActivity implements NavigationView.OnNavig
         return date.format(formatter);
     }
 
+    private String dayFromDate(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd");
+        return date.format(formatter);
+    }
+    private String monthFromDate(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM");
+        return date.format(formatter);
+    }
+    private String yearFromDate(LocalDate date){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+        return date.format(formatter);
+    }
+
     public void previousDayAction(View view) {
         today = today.minusDays(1);
         setDayView();
     }
 
     private void setDayView() {
-        String message=""+monthYearFromDate(today);
-        date.setText(message);
+        String day_text=""+dayFromDate(today);
+        String month_text=""+monthFromDate(today);
+        String dayOfWeek_text=""+today.getDayOfWeek();
+        String year_text=""+yearFromDate(today);
+
+        day.setText(day_text);
+        month.setText(month_text);
+        dayOfWeek.setText(dayOfWeek_text);
+        dayOfWeek.setText(dayOfWeek_text);year.setText(year_text);
+
+
     }
 
     public void nextDayAction(View view) {

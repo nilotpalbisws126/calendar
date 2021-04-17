@@ -11,8 +11,9 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#007996"
         tools:context=".DayView">
 
         <ImageView
@@ -25,75 +26,117 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_menu" />
 
-
         <LinearLayout
+            android:id="@+id/year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toggle">
+
+            <TextView
+                android:id="@+id/year_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAAL"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="150dp"
+            android:background="#97EAF4"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/year"
+
+           >
+
+
+
             <LinearLayout
+                android:id="@+id/title_layout"
                 android:layout_width="match_parent"
                 android:layout_height="200sp"
-                android:orientation="vertical"
-                android:id="@+id/title_layout">
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100sp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <Button
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@null"
                         android:onClick="previousDayAction"
                         android:text="@string/backward"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/blck"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
                     <TextView
-                        android:id="@+id/monthViewtv"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:text="Today"
+                        android:id="@+id/month"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="Mahina"
                         android:textAlignment="center"
-                        android:textColor="@color/blck"
-                        android:textSize="20sp" />
+                        android:textSize="40dp" />
+
+                    <TextView
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:text="Tarikh"
+                        android:textAlignment="center"
+                        android:textSize="60dp" />
+
+                    <TextView
+                        android:id="@+id/dayOfWeek"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Din"
+                        android:textAlignment="center"
+                        android:textSize="30dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <Button
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@null"
                         android:onClick="nextDayAction"
                         android:text="@string/forward"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/blck"
                         android:textSize="20sp"
                         android:textStyle="bold" />
-
 
                 </LinearLayout>
 
 
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/dateView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:text="Aaj ki date"
-                android:textSize="40sp" />
 
         </LinearLayout>
 
