@@ -10,7 +10,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
@@ -41,6 +43,24 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
     public void onBindViewHolder(@NonNull CalendarViewHolder holder, int position) {
         holder.dayOfMonth.setText(dayOfMonth.get(position));
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        DecimalFormat formatter_day = new DecimalFormat("00");
+
+
+        String month=month_year.format(formatter).toString();
+        String year= String.valueOf(month_year.getYear());
+        if(holder.dayOfMonth.getText().toString()!=null && !holder.dayOfMonth.getText().toString().isEmpty()){
+            int day=Integer.parseInt(holder.dayOfMonth.getText().toString());
+            String day_s=formatter_day.format(day);
+
+
+            if(LocalDate.parse(year+"-"+month+"-"+day_s).getDayOfWeek().toString().equals("SUNDAY")){
+                holder.dayOfMonth.setTextColor(Color.RED);
+            }
+        }
+
+//        LocalDate.parse(""+year+"-"+month+"-"+day);
+        //  Toast.makeText(this,LocalDate.parse(year+"-"+month+"-"+day).toString(),Toast.LENGTH_LONG).show();
 
         if(holder.dayOfMonth.getText().toString().equals(""+LocalDate.now().getDayOfMonth()) && month_year.equals(LocalDate.now())){
 
@@ -48,6 +68,8 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
             holder.dayOfMonth.setBackgroundColor(Color.GREEN);
 
         }
+
+
 
 
 

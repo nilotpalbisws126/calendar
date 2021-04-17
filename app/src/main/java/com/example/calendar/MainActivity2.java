@@ -72,13 +72,25 @@ public class MainActivity2 extends  AppCompatActivity implements NavigationView.
         YearMonth yearMonth = YearMonth.from(selectedDate);
         int daysInMonth = yearMonth.lengthOfMonth();
         LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
+
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
+      //  Toast.makeText(this,""+LocalDate.now(),Toast.LENGTH_LONG).show();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM");
+        String month=selectedDate.format(formatter).toString();
+        String year= String.valueOf(selectedDate.getYear());
+        String day= String.valueOf(selectedDate.getDayOfMonth());
+        //LocalDate.parse(""+year+"-"+month+"-"+day);
+      //  Toast.makeText(this,LocalDate.parse(year+"-"+month+"-"+day).toString(),Toast.LENGTH_LONG).show();
+
+
+
         for(int i=1;i<=42;i++){
-            if(i<=dayOfWeek||i>daysInMonth - dayOfWeek){
+            if(i<dayOfWeek||(i-dayOfWeek+1) > daysInMonth){
                 daysInMonthArray.add("");
             }
             else{
-                daysInMonthArray.add(String.valueOf(i+dayOfWeek));
+                daysInMonthArray.add(String.valueOf(i-dayOfWeek+1));
 
             }
         }
