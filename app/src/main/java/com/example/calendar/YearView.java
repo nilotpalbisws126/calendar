@@ -23,7 +23,7 @@ public class YearView extends AppCompatActivity implements NavigationView.OnNavi
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     YearViewAdapter yearViewAdapter;
-    int []arr={R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan,R.drawable.jan};
+    int []arr={R.drawable.jan,R.drawable.feb,R.drawable.mar,R.drawable.apr,R.drawable.may,R.drawable.jun,R.drawable.july,R.drawable.aug,R.drawable.sept,R.drawable.oct,R.drawable.nov,R.drawable.dec};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class YearView extends AppCompatActivity implements NavigationView.OnNavi
         recyclerView.setAdapter(yearViewAdapter);
 
         recyclerView.setHasFixedSize(true);
-        Toast.makeText(this,"hello",Toast.LENGTH_LONG).show();
+       // Toast.makeText(this,"hello",Toast.LENGTH_LONG).show();
 
 
 
@@ -60,19 +60,24 @@ public class YearView extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         Context context = getApplicationContext();
-        if(id==R.id.yearView){
+        if(id==R.id.monthView){
             Intent i = new Intent(this, MainActivity2.class);
             startActivity(i);
-            Toast.makeText(getApplicationContext(),"home",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"home",Toast.LENGTH_LONG).show();
         }
-        else if(id == R.id.monthView){
+        else if(id == R.id.yearView){
             Intent i1 = new Intent(this, YearView.class);
             startActivity(i1);
-          //  Toast.makeText(getApplicationContext(),"about",Toast.LENGTH_LONG).show();
+            //  Toast.makeText(getApplicationContext(),"about",Toast.LENGTH_LONG).show();
         }
         else if(id == R.id.dayView){
             Intent i2 = new Intent(this, DayView.class);
             startActivity(i2);
+            // Toast.makeText(getApplicationContext(),"contact",Toast.LENGTH_LONG).show();
+        }
+        else if(id == R.id.addEvent){
+            Intent i3 = new Intent(this, MainActivity.class);
+            startActivity(i3);
             // Toast.makeText(getApplicationContext(),"contact",Toast.LENGTH_LONG).show();
         }
 //        else if(id == R.id.menu_acknowledgement){

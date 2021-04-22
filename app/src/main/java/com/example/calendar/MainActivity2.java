@@ -130,12 +130,12 @@ public class MainActivity2 extends  AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         Context context = getApplicationContext();
-        if(id==R.id.yearView){
+        if(id==R.id.monthView){
             Intent i = new Intent(this, MainActivity2.class);
             startActivity(i);
-            Toast.makeText(getApplicationContext(),"home",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(),"home",Toast.LENGTH_LONG).show();
         }
-        else if(id == R.id.monthView){
+        else if(id == R.id.yearView){
             Intent i1 = new Intent(this, YearView.class);
             startActivity(i1);
             //  Toast.makeText(getApplicationContext(),"about",Toast.LENGTH_LONG).show();
@@ -144,6 +144,11 @@ public class MainActivity2 extends  AppCompatActivity implements NavigationView.
             Intent i2 = new Intent(this, DayView.class);
             startActivity(i2);
            // Toast.makeText(getApplicationContext(),"contact",Toast.LENGTH_LONG).show();
+        }
+        else if(id == R.id.addEvent){
+            Intent i3 = new Intent(this, MainActivity.class);
+            startActivity(i3);
+            // Toast.makeText(getApplicationContext(),"contact",Toast.LENGTH_LONG).show();
         }
 //        else if(id == R.id.menu_acknowledgement){
 //            Intent i3 = new Intent(MainActivity.this, Acknowledgement.class);

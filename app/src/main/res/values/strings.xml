@@ -3,5 +3,10 @@
     <string name="forward">>></string>
     <string name="backward">&lt;&lt;</string>
     <string name="contact">Contact us and developer</string>
+    <string-array name="event_type">
+        <item>  Meeting</item>
+        <item>  Assignment</item>
+        <item>  Other Event</item>
+    </string-array>
 
 </resources>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#007996"
+    android:orientation="vertical"
+    android:paddingLeft="20sp"
+    android:paddingTop="100sp"
+    android:paddingRight="10sp"
+    tools:context="com.example.calendar.MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30sp"
+        android:text="Add Event"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Title"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/event_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+
+
+        android:autofillHints="Event Type"
+        android:backgroundTintMode="add"
+        android:fadingEdge="horizontal|vertical"
+        android:paddingTop="20sp"
+        android:paddingBottom="20sp"
+        android:scrollbarSize="20sp"
+        android:spinnerMode="dropdown"
+        android:textAlignment="center"
+        android:tooltipText="Event Type" />
+
+    <EditText
+        android:id="@+id/start_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_type"
+        android:hint="Start"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/deadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_type"
+        android:hint="Deadline"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/meeting_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/event_type"
+        android:hint="Meeting Date and Time"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/end_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/start_date"
+        android:hint="End"
+        android:visibility="gone" />
+
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/end_date"
+        android:hint="Description"
+        android:textSize="20sp" />
+
+    <Switch
+        android:id="@+id/reminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/description"
+        android:hint="Reminder On/Off"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50sp"
+        android:background="#3F51B5"
+        android:text="Save"
+        android:textColor="#FFFFFF" />
+
+
+</LinearLayout>
